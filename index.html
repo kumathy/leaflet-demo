@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" conten="width=device-width, initial-scale=1.0">
+        <title>Leaflet Demo</title>
+
+        <!-- leaflet css -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            #map {
+                width: 100%;
+                height: 100vh;
+            }
+            .coordinate {
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: white;
+                padding: 8px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                font-size: 15px;
+            }
+            #form-container {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: white;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                z-index:500
+            }       
+            input {
+                padding: 5px;
+                margin-right: 5px;
+            }
+            button {
+            padding: 5px 10px;
+            cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="map">
+            <div class="leaflet-control coordinate">
+
+            </div>
+        </div>
+
+        <div id="form-container">
+            <form id="my-form">
+                <input type="text" id="location" placeholder="(City, Province Code)">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- leaflet js -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+        <script>
+            const apiKey = 'a78dcab00dmsh943aa3f369bf5afp1ccfe2jsn781cf87a3fea';
+            // Map initialization
+            var map = L.map('map').setView([45.9636, -66.6431], 14);
+
+            // OpenStreetMap layer
+            var openStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            });
+
+            // Light Layer
+            var light = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {
+            minZoom: 0,
+            maxZoom: 20,
+            attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            ext: 'png'
+            });
+
+            // Dark Layer
+            var dark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.{ext}', {
+            minZoom: 0,
+            maxZoom: 20,
+            attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            ext: 'png'
+            });
+
+            // Google Streets Layer
+            var googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{
+            maxZoom: 20,
+            subdomains:['mt0','mt1','mt2','mt3']
+            });
+
+            // Google Satellite Layer
+            var googleSatellite = L.tileLayer('http://{s}.google.com/vt?lyrs=s&x={x}&y={y}&z={z}',{
+            maxZoom: 20,
+            subdomains:['mt0','mt1','mt2','mt3']
+            });
+
+            // Google Terrain Layer
+            var googleTerrain = L.tileLayer('http://{s}.google.com/vt?lyrs=p&x={x}&y={y}&z={z}',{
+            maxZoom: 20,
+            subdomains:['mt0','mt1','mt2','mt3']
+            });
+
+            openStreetMap.addTo(map);
+
+            // Marker
+            var myIcon = L.icon({
+            iconUrl: 'img/red_marker.png',
+            iconSize: [55, 55],
+            });
+            var marker = L.marker([45.9636, -66.6431], {icon: myIcon});
+            var popup = marker.bindPopup("Fredericton - " + marker.getLatLng()).openPopup()
+
+            popup.addTo(map);
+
+            // Layer Controller
+            var baseMaps = {
+                "OpenStreetMap": openStreetMap,
+                "Google Streets": googleStreets,
+                "Google Satellite": googleSatellite,
+                "Google Terrain": googleTerrain,
+                "Light": light,
+                "Dark": dark
+            };
+
+            var overlayMaps = {
+                "Marker": marker
+            };
+
+            var layerControl = L.control.layers(baseMaps, overlayMaps, {collapsed: false});
+            layerControl.addTo(map);
+
+            // Leaflet Event
+            map.on('mousemove', function(e){
+                document.getElementsByClassName("coordinate")[0].innerHTML = `(${e.latlng.lat}, ${e.latlng.lng})`;
+                console.log(`lat: ${e.latlng.lat}, lng: ${e.latlng.lng}`);
+            })
+
+            const data = null;
+
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            let form = document.getElementById("my-form");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                let location = document.getElementById("location").value;
+                searchCity(location);
+            });
+
+            function searchCity(input) {
+                const info = input.split(", ");
+                const city = info[0];
+                const province = info[1];
+
+                xhr.addEventListener('readystatechange', function () {
+	                if (this.readyState === this.DONE) {
+                        var response = JSON.parse(this.responseText);
+
+		                map.setView([response.data[0].latitude, response.data[0].longitude], 14);
+                        openStreetMap.addTo(map);
+                        marker.setLatLng([response.data[0].latitude, response.data[0].longitude]);
+                        popup = marker.bindPopup(`${response.data[0].name}: (${response.data[0].latitude}, ${response.data[0].longitude})`).openPopup()
+                        popup.addTo(map);
+	                }
+                });
+
+                xhr.open('GET', `https://wft-geo-db.p.rapidapi.com/v1/geo/countries/CA/regions/${province}/cities?namePrefix=${city}&limit=1`);
+                xhr.setRequestHeader('X-RapidAPI-Key', apiKey);
+                xhr.setRequestHeader('X-RapidAPI-Host', 'wft-geo-db.p.rapidapi.com');
+
+                xhr.send(data);
+            }
+        </script>
+
+    </body>
+</html>
+
+
