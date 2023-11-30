@@ -31,7 +31,7 @@ After this, right clicking on the ```index.html``` file should take you to a bro
 
 ## How to search
 
-In order to search for a Canadian City, enter an input with the following format:
+In order to search for a Canadian City, input the location in the field at the bottom of the screen in the following format and press submit:
 
 ```
 City Name, Internationally Approved Alpha Code for Province/Territory
