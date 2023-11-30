@@ -77,19 +77,19 @@ Leaflet was created in 2010 by Vladimir Agafonkin - a Russian software developer
 
 For this Exploration Activity, I wanted to find a library that is fun and interactive to research on, which Leaflet perfectly fits this description for me.
 
-Additionally, I thought of the idea of using GeoDP Cities API [[2]](https://rapidapi.com/wirefreethought/api/geodb-cities) to search for a city would complement very well with this project as well. And I thought this would give me a great opportunity to learn how to use multiple libraries and API together.
+Additionally, I thought of the idea of using GeoDP Cities API [[2]](https://rapidapi.com/wirefreethought/api/geodb-cities) to search for a city, and how it would complement very well with this project, and I thought this would give me a great opportunity to learn how to use multiple libraries and APIs together.
 
 ## Reflection
 
 ### influence in learning JavaScript
 
-This experience has definately improve my understanding on JavaScript, as well as helping me familiarize with html and css styling as well. It is very important in web development to be able to use these 3 tools well and I've gained a lot valuable experience for them with this project.
+This experience has definately improve my understanding of JavaScript, as well as helping me familiarize with html and css styling as well. It is very important in web development to be able to use these 3 tools well and I feel that I've gained a lot of valuable experience for them with this project.
 
 ### Overall experience
 
-Overall, I enjoyed my experience learning Leaflet as well as getting a web page working. My work for this project took longer expected however, as I had to do some extra research on html UI, css styling as well as getting the GeoDP Cities API to work as well. For JavaScript PQ3, we used **axios** [[3]](https://axios-http.com/docs/intro) for api request which I had some trouble getting it to run on web browsers, so I had to look into how to use **XMLHttpRequest** [[4]](https://en.wikipedia.org/wiki/XMLHttpRequest) instead.
+Overall, I enjoyed my experience learning Leaflet as well as getting a web page working. My work for this project took longer expected however, as I had to do some extra research on html, css styling as well as getting the GeoDP Cities API to work. For JavaScript PQ3, we used **axios** [[3]](https://axios-http.com/docs/intro) for API requests which I had some trouble getting it to run on web browsers, so I had to look into how to use **XMLHttpRequest** [[4]](https://en.wikipedia.org/wiki/XMLHttpRequest) instead.
 
-In conclusion, I had a lot of fun messing with the features of Leaflet and getting the web page working. I would highly recommend anyone who wants an interactive and satisfying learning experience on how to use JavaScript libraries to give Leaflet a try. 
+In conclusion, I had a lot of fun messing with the features of Leaflet and getting the web page working. I would highly recommend anyone who wants an interactive and satisfying learning experience on how to use JavaScript libraries to give Leaflet a try.
 
 ## References
 [1] [https://en.wikipedia.org/wiki/Leaflet_(software)#:~:text=Leaflet%20began%20life%20in%202010,of%20the%20old%20API%20code.](https://en.wikipedia.org/wiki/Leaflet_(software)#:~:text=Leaflet%20began%20life%20in%202010,of%20the%20old%20API%20code.)
