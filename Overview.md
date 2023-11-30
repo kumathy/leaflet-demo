@@ -39,7 +39,7 @@ var popup = marker.bindPopup("Fredericton - " + marker.getLatLng()).openPopup()
 popup.addTo(map);
 ```
 
-3. Creating a layer controleller with `L.control.layers` that allows users to switch between map layers and make the marker visible or not.
+3. Creating a layer controller with `L.control.layers` that allows users to switch between map layers and make the marker visible or not.
 
 ```
 // Layer Controller
