@@ -10,9 +10,9 @@ For this Exploration Activity, I decided on **Leaflet** as my library of choice 
 
 ## Functionalities
 
-For my sample project, I created an interactive map demo where you can interact with the world map, choose different map tiles, toggle marker and navigate to a selected Canadian City. the features used are listed below:
+For my sample project, I created an interactive map demo where you can interact with the world map, choose different map layers, toggle marker and navigate to a selected Canadian City. the features used are listed below:
 
-1. Initiating the map with the map tile of your choice with the `map` class.
+1. Initiating the map with the map layer of your choice with the `map` class.
 
 ```
 var map = L.map('map').setView([45.9636, -66.6431], 14);
