@@ -11,6 +11,8 @@ For this Exploration Activity, I will be looking into **Leaflet** - a JavaScript
 Specifically, I will be creating a website where you can view and explore the world map, as well as navigate to a Canadian City of your choice.
 
 ## Interative Map Demo 🗺️
+![image](https://github.com/CS2613-FA23/explorationactivity2-anh-tran2106/assets/84007510/d6c51aa4-ddf5-410d-b6fd-b3a48b3faf29)
+
 
 This demo's purpose is to demonstrates the use of the basic functionalities of [Leaflet](https://leafletjs.com/), allowing websites to display maps as well as interacting with them. It will also make use of [GeoDP Cities API](https://rapidapi.com/wirefreethought/api/geodb-cities) *(used in JavaScript PQ3)* to navigate the map to a selected Canadian City.
 
@@ -31,11 +33,13 @@ After this, right clicking on the ```index.html``` file should take you to a bro
 
 ## How to search
 
-In order to search for a Canadian City, enter an input with the following format:
+In order to search for a Canadian City, input the location in the field at the bottom of the screen in the following format:
 
 ```
 City Name, Internationally Approved Alpha Code for Province/Territory
 ```
+
+Press the **submit** button to perform the search.
 
 You can see the full list of the internationally approved alpha codes [here](https://census.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8).
 
