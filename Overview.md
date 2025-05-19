@@ -73,7 +73,7 @@ map.on('mousemove', function(e){
 
 Leaflet was created in 2010 by Vladimir Agafonkin - a Russian software developer. It was first release in 2011 and has since gained popularity for its simplicity, versatility, and active developer community.  [[1]](https://en.wikipedia.org/wiki/Leaflet_(software)#:~:text=Leaflet%20began%20life%20in%202010,of%20the%20old%20API%20code.).
 
-## Why I chose Pyglet
+## Why I chose Leaflet
 
 For this Exploration Activity, I wanted to find a library that is fun and interactive to research on, which Leaflet perfectly fits this description for me.
 
@@ -81,9 +81,9 @@ Additionally, I thought of the idea of using GeoDP Cities API [[2]](https://rapi
 
 ## Reflection
 
-### influence in learning JavaScript
+### Influence in learning JavaScript
 
-This experience has definately improve my understanding of JavaScript, as well as helping me familiarize with html and css styling as well. It is very important in web development to be able to use these 3 tools well and I feel that I've gained a lot of valuable experience for them with this project.
+This experience has definately improve my understanding of JavaScript, as well as helping me familiarize with HTML and CSS styling as well. It is very important in web development to be able to use these 3 tools well and I feel that I've gained a lot of valuable experience for them with this project.
 
 ### Overall experience
 
