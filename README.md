@@ -10,7 +10,7 @@
   <img src="https://github.com/CS2613-FA23/explorationactivity2-anh-tran2106/assets/84007510/d6c51aa4-ddf5-410d-b6fd-b3a48b3faf29" alt="Interactive Map Screenshot" width="700"/>
 </p>
 
-<p align="center">A simple interactive map web app built with 
+<p align="center">An interactive map web app built with 
   <a href="https://leafletjs.com/">Leaflet.js</a> and the 
   <a href="https://rapidapi.com/wirefreethought/api/geodb-cities">GeoDB Cities API</a> to explore Canadian cities 🇨🇦 🏙️
 </p>
@@ -32,7 +32,7 @@
 git clone https://github.com/kumathy/leaflet-demo.git
 ```
 
-2. **Open the project folder**
+2. **Navigate to the project directory**
 ```bash
 cd leaflet-demo
 ```
