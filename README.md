@@ -18,8 +18,6 @@
 > [!NOTE]
 > This project was created for **CS2613 Exploration Activity #2** (Fall 2023 - UNB). It demonstrates basic integration between the **Leaflet.js mapping library** and the **GeoDB Cities API** to create an interactive, browser-based map.
 
----
-
 ## Getting Started
 
 ### Prerequisites
