@@ -29,12 +29,12 @@
 
 1. **Clone this repository**
 ```bash
-git clone https://github.com/kumathy/explorationactivity2-anh-tran2106.git
+git clone https://github.com/kumathy/leaflet-demo.git
 ```
 
 2. **Open the project folder**
 ```bash
-cd explorationactivity2-anh-tran2106
+cd leaflet-demo
 ```
 
 3. **Add your API key**
