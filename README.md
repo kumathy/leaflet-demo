@@ -1,47 +1,72 @@
-# Interative Map Demo 🗺️
-![image](https://github.com/CS2613-FA23/explorationactivity2-anh-tran2106/assets/84007510/d6c51aa4-ddf5-410d-b6fd-b3a48b3faf29)
+# <p align="center">Interactive Map Demo 🗺️</p>
 
-This repository is my work for the Exploration Activity #2 of CS2613 - Fall 2023 - University of New Brunswick. This is forked from a Github profile created by Github Classroom.
+<p align="center">
+  <img alt="Leaflet" src="https://img.shields.io/badge/Leaflet-199900?style=for-the-badge&logo=leaflet&logoColor=white">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+</p>
 
-This demo's purpose is to demonstrates the use of the basic functionalities of [Leaflet](https://leafletjs.com/), allowing websites to display maps as well as interacting with them. It also makes use of [GeoDP Cities API](https://rapidapi.com/wirefreethought/api/geodb-cities) to navigate the map to a selected Canadian City.
+<p align="center">
+  <img src="https://github.com/CS2613-FA23/explorationactivity2-anh-tran2106/assets/84007510/d6c51aa4-ddf5-410d-b6fd-b3a48b3faf29" alt="Interactive Map Screenshot" width="700"/>
+</p>
+
+<p align="center">A simple interactive map web app built with 
+  <a href="https://leafletjs.com/">Leaflet.js</a> and the 
+  <a href="https://rapidapi.com/wirefreethought/api/geodb-cities">GeoDB Cities API</a> to explore Canadian cities 🇨🇦 🏙️
+</p>
+
+> [!NOTE]
+> This project was created for **CS2613 Exploration Activity #2** (Fall 2023 - UNB). It demonstrates basic integration between the **Leaflet.js mapping library** and the **GeoDB Cities API** to create an interactive, browser-based map.
+
+---
 
 ## Getting Started
 
 ### Prerequisites
+- A **GeoDB Cities API key** from [RapidAPI](https://rapidapi.com/wirefreethought/api/geodb-cities)
 
-Once you clone the project, open ```index.html``` in a code editor and change the ```apiKey``` to your own API Key at ```line 71``` .
+### Installation steps
 
-The line should look like this:
+1. **Clone this repository**
+```bash
+git clone https://github.com/kumathy/explorationactivity2-anh-tran2106.git
 ```
-const apiKey = 'example API key';
+
+2. **Open the project folder**
+```bash
+cd explorationactivity2-anh-tran2106
 ```
 
-To get your API key, you need to make an Account on [RapidAPI](https://rapidapi.com/wirefreethought/api/geodb-cities) and get your API Key there.
+3. **Add your API key**
 
-After this, right clicking on the ```index.html``` file should take you to a browser where you can see the demo in action.
+> In index.html, replace the placeholder (around line 71) with your key:
+```js
+const apiKey = 'YOUR_API_KEY_HERE';
+```
+
+4. **Run the demo**
+
+> Open index.html in your browser:
+```bash
+open index.html
+```
 
 ## How to search
-
-In order to search for a Canadian City, input the location in the field at the bottom of the screen in the following format:
-
+Enter a location of a Canadian City in this format:
 ```
-City Name, Internationally Approved Alpha Code for Province/Territory
+City Name, Province/Territory Alpha Code
 ```
-
-Press the **submit** button to perform the search.
-
-You can see the full list of the internationally approved alpha codes [here](https://census.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8).
 
 Some input examples:
-
 ```
 Fredericton, NB
 ```
-
 ```
 Moncton, NB
 ```
-
 ```
 Toronto, ON
 ```
+
+📘 Full list of internationally approved alpha codes [here](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8).
+
