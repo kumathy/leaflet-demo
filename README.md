@@ -23,7 +23,7 @@
 ### Prerequisites
 - A **GeoDB Cities API key** from [RapidAPI](https://rapidapi.com/wirefreethought/api/geodb-cities)
 
-### Installation steps
+### Installation
 
 1. **Clone this repository**
 ```bash
